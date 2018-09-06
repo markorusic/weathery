@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import withLoading from 'hoc/withLoading'
 import weatherService from 'services/weather'
 import Forecast from 'components/weather/Forecast'
 import bg from 'assets/images/bg.jpg'
@@ -17,6 +18,8 @@ const cities = [
   }
 ]
 
+const ForecastWithLoading = withLoading(Forecast)
+
 class App extends Component {
 
   state = {
@@ -28,23 +31,27 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.toggleLoader()
     this.loadData()
-      .then(this.toggleLoader)
-    this.rerenderInterval = setInterval(() => this.setState({ lastCmpUpdate: Date.now() }), 3000)
+    this.rerenderInterval = setInterval(() => this.setState({ lastCmpUpdate: Date.now() }), 60000)
   }
 
   componentWillUnmount() {
     clearInterval(this.rerenderInterval)
   }
 
-  loadData = () => {
+  loadData = (showLoader = true) => {
+    if (showLoader) {
+      this.toggleLoader()
+    }
     return weatherService.fetchDataByCity(this.state.activeCity.slug)
       .then(data => {
         this.setState({
           forecastData: data,
           lastUpdate: Date.now()
         })
+        if (showLoader) {
+          this.toggleLoader()
+        }
         return data
       })
   }
@@ -61,21 +68,18 @@ class App extends Component {
   }
 
   onReload = () => {
-    this.loadData()
+    this.loadData(false)
   }
 
   render() {
     const { isLoading, lastUpdate, forecastData, activeCity } = this.state
 
-    if (isLoading) {
-      return (<h3>Loading...</h3>)
-    }
-
     return (
       <div className="wrapper flex-center">
         <div className="forecast">
-          <div>Logo weather</div>
-          <Forecast
+          {!isLoading && (<div className="full-width">Logo weather</div>)}
+          <ForecastWithLoading
+            isLoading={isLoading}
             forecastData={forecastData}
             cities={cities}
             activeCity={activeCity}

@@ -11,7 +11,10 @@ body {
   body .forecast {
     padding: 60px;
     background-color: #D9ECF8;
-    color: white; }
+    color: white;
+    min-height: 640px;
+    min-width: 990px;
+    box-sizing: border-box; }
     body .forecast .box {
       padding: 30px; }
     body .forecast .left {
@@ -64,12 +67,15 @@ body {
           margin-left: 10px;
           color: #ffffffc2; }
       body .forecast .right .current-date {
-        color: #ffffffc2; }
-      body .forecast .right .city-list li a {
-        cursor: pointer;
-        font-size: 23px; }
-        body .forecast .right .city-list li a:hover {
-          opacity: 0.7; }
+        color: #ffffffc2;
+        margin: 0; }
+      body .forecast .right .city-list {
+        margin-bottom: 5px !important; }
+        body .forecast .right .city-list li a {
+          cursor: pointer;
+          font-size: 23px; }
+          body .forecast .right .city-list li a:hover {
+            opacity: 0.7; }
       body .forecast .right .forecast-day-wrapper {
         align-items: flex-end; }
         body .forecast .right .forecast-day-wrapper .forecast-day-item {
@@ -115,13 +121,13 @@ body {
 .border-box, body .forecast .right .forecast-day-wrapper .forecast-day-item {
   box-sizing: border-box; }
 
-.flex, body .forecast .right .h1, .flex-list, .flex-list-col, body .forecast .right .city-list, .flex-center, .flex-center-col, .flex-sp-between, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item {
+.flex, body .forecast .right .h1, .flex-list, .flex-list-col, body .forecast .right .city-list, .flex-center, .flex-center-col, body .forecast, .flex-sp-between, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item {
   display: flex; }
 
-.flex-col, .flex-list-col, body .forecast .right .city-list, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item, .flex-center-col {
+.flex-col, .flex-list-col, body .forecast .right .city-list, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item, .flex-center-col, body .forecast {
   flex-direction: column; }
 
-.flex-center, .flex-center-col {
+.flex-center, .flex-center-col, body .forecast {
   justify-content: center;
   align-items: center; }
 

@@ -18,6 +18,10 @@ body {
     padding: 60px;
     background-color: #D9ECF8;
     color: white;
+    min-height: 640px;
+    min-width: 990px;
+    box-sizing: border-box;
+    @extend .flex-center-col;
 
     .box {
       padding: 30px;
@@ -91,10 +95,13 @@ body {
 
       .current-date {
         color: #ffffffc2;
+        margin: 0;
       }
 
       .city-list {
         @extend .flex-list-col;
+
+        margin-bottom: 5px !important;
 
         li a {
           cursor: pointer;

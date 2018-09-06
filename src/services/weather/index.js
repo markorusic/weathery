@@ -14,6 +14,10 @@ export default {
       default:
         break;
     }
-    return Promise.resolve(data)
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(data)
+      }, 1000)
+    })
   }
 }

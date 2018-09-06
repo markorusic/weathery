@@ -44,7 +44,7 @@ WeatherBasicDetails.propTypes = {
   humidity: PropTypes.number.isRequired,
   dewPoint: PropTypes.number.isRequired,
   uvIndex: PropTypes.number.isRequired,
-  visibility: PropTypes.numbe.isRequiredr
+  visibility: PropTypes.number.isRequired
 }
 
 export default WeatherBasicDetails

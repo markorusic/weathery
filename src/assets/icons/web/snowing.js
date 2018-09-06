@@ -1,7 +1,7 @@
 import React from "react"
 
 const Snowing = props => (
-	<svg id="snowing" viewBox="0 0 1000 1000" {...props}>
+	<svg id="snowing" viewBox="270 330 430 300" {...props}>
 		<title>snowing</title>
 		<path
 			className="st0"

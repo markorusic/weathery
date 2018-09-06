@@ -1,7 +1,7 @@
 import React from "react"
 
 const Sun = props => (
-	<svg id="sun" viewBox="0 0 1000 1000" {...props}>
+	<svg id="sun" viewBox="270 330 430 300" {...props}>
 		<title>sun</title>
 		<path
 			className="st0"

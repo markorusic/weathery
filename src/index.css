@@ -1,4 +1,160 @@
+a {
+  cursor: pointer; }
+
 body {
   padding: 0;
   margin: 0;
   font-family: Helvetica; }
+  body .wrapper {
+    padding: 150px; }
+  body .forecast {
+    padding: 60px;
+    background-color: #D9ECF8;
+    color: white; }
+    body .forecast .box {
+      padding: 30px; }
+    body .forecast .left {
+      margin-right: 10px; }
+      body .forecast .left .top {
+        height: 250px;
+        width: 250px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        background: #00b7ea;
+        /* Old browsers */
+        background: -moz-linear-gradient(45deg, #00b7ea 0%, #33c0e8 70%, #009ec3 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(45deg, #00b7ea 0%, #33c0e8 70%, #009ec3 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(45deg, #00b7ea 0%, #33c0e8 70%, #009ec3 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=1 );
+        /* IE6-9 fallback on horizontal gradient */ }
+        body .forecast .left .top .h1 {
+          font-size: 40px; }
+        body .forecast .left .top .h2 {
+          font-size: 30px; }
+        body .forecast .left .top .chart {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -140px; }
+          body .forecast .left .top .chart path {
+            transform: scale(0.62, 1); }
+          body .forecast .left .top .chart line {
+            fill: #89e5d6bd; }
+      body .forecast .left .bottom {
+        height: 120px;
+        background: #1f4037;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #99f2c8, #1f4037);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #99f2c8, #1f4037);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+        body .forecast .left .bottom strong {
+          font-size: 25px; }
+    body .forecast .right {
+      width: 550px; }
+      body .forecast .right .current-date {
+        color: #ffffffc2; }
+      body .forecast .right .forecast-day-wrapper {
+        align-items: flex-end; }
+        body .forecast .right .forecast-day-wrapper .forecast-day-item {
+          cursor: pointer;
+          height: 180px;
+          padding: 20px 24px;
+          background-color: #346b56d1;
+          -webkit-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out; }
+          body .forecast .right .forecast-day-wrapper .forecast-day-item .day-temperature {
+            justify-content: center; }
+          body .forecast .right .forecast-day-wrapper .forecast-day-item .day-icon-wrapper {
+            transition: all .3s ease-in-out; }
+          body .forecast .right .forecast-day-wrapper .forecast-day-item:not(:last-child) {
+            border-right: 0.7px solid transparent; }
+          body .forecast .right .forecast-day-wrapper .forecast-day-item:hover {
+            background-color: #46c591de;
+            height: 200px; }
+            body .forecast .right .forecast-day-wrapper .forecast-day-item:hover .day-temperature {
+              transform: scale(1.5); }
+            body .forecast .right .forecast-day-wrapper .forecast-day-item:hover .day-icon-wrapper svg {
+              fill: #fff; }
+
+.uc, .h1 {
+  text-transform: uppercase; }
+
+.h1 {
+  font-size: 40px;
+  margin: 0; }
+
+.full-width {
+  width: 100%; }
+
+.full-height {
+  height: 100%; }
+
+.border-box, body .forecast .right .forecast-day-wrapper .forecast-day-item {
+  box-sizing: border-box; }
+
+.flex, .flex-center, .flex-center-col, .flex-sp-between, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item {
+  display: flex; }
+
+.flex-col, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item, .flex-center-col {
+  flex-direction: column; }
+
+.flex-center, .flex-center-col {
+  justify-content: center;
+  align-items: center; }
+
+.flex-sp-between, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item {
+  justify-content: space-between; }
+
+.relative, .bg-img-cover {
+  position: relative; }
+
+.absolute, .absolute-cover, .bg-overlay, .absolute-b-20 {
+  position: absolute; }
+
+.absolute-cover, .bg-overlay {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+.absolute-b-20 {
+  bottom: 20px; }
+
+.ml-5 {
+  margin-left: 5px; }
+
+.fs-14 {
+  font-size: 13px; }
+
+.fs-10 {
+  font-size: 10px; }
+
+.fs-5 {
+  font-size: 5px; }
+
+.bg-img-cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.path {
+  stroke-dasharray: 780;
+  stroke-dashoffset: 780;
+  animation: dash 4s linear alternate infinite; }
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000; }
+  to {
+    stroke-dashoffset: 0; } }
+
+@keyframes pop {
+  50% {
+    height: 210px; } }

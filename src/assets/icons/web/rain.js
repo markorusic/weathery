@@ -1,7 +1,7 @@
 import React from "react"
 
 const Rain = props => (
-	<svg id="rain" viewBox="0 0 1000 1000" {...props}>
+	<svg id="rain" viewBox="270 330 430 300" {...props}>
 		<title>rain</title>
 		<path
 			className="st0"

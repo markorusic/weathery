@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { formatFarenheit } from 'helpers/format'
 
 const WeatherBasicDetails = ({ humidity, dewPoint, uvIndex, visibility }) => (
   <div className="box bottom flex-sp-between-col">
@@ -14,7 +16,7 @@ const WeatherBasicDetails = ({ humidity, dewPoint, uvIndex, visibility }) => (
       <div>
         <div>
           <strong className="flex">
-            <span>{dewPoint}</span>
+            <span>{formatFarenheit(dewPoint)}</span>
             <i className="fa fa-circle fs-5" aria-hidden="true"></i>
           </strong>
         </div>
@@ -37,5 +39,12 @@ const WeatherBasicDetails = ({ humidity, dewPoint, uvIndex, visibility }) => (
     </div>
   </div>
 )
+
+WeatherBasicDetails.propTypes = {
+  humidity: PropTypes.number.isRequired,
+  dewPoint: PropTypes.number.isRequired,
+  uvIndex: PropTypes.number.isRequired,
+  visibility: PropTypes.numbe.isRequiredr
+}
 
 export default WeatherBasicDetails

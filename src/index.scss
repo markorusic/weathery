@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Basic');
 @import './styles/variables.scss';
 
 a {
@@ -7,7 +8,7 @@ a {
 body {
   padding: 0;
   margin: 0;
-  font-family: Helvetica;
+  font-family: 'Basic', sans-serif;
 
   .wrapper {
     padding: 150px;
@@ -76,8 +77,33 @@ body {
     .right {
       width: 550px;
 
+      .h1 {
+        @extend .flex;
+        align-items: center;
+        cursor: pointer;
+
+        i {
+          font-size: 20px;
+          margin-left: 10px;
+          color: #ffffffc2;
+        }
+      }
+
       .current-date {
         color: #ffffffc2;
+      }
+
+      .city-list {
+        @extend .flex-list-col;
+
+        li a {
+          cursor: pointer;
+          font-size: 23px;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
       }
 
       .forecast-day-wrapper {
@@ -96,6 +122,7 @@ body {
 
             .day-temperature {
               justify-content: center;
+              font-size: 21px;
             }
 
             .day-icon-wrapper {
@@ -111,7 +138,7 @@ body {
               height: 200px;
 
              .day-temperature {
-               transform: scale(1.5);
+              font-size: 24px;
              }
              .day-icon-wrapper {
                 svg {
@@ -125,6 +152,22 @@ body {
 
   }
 
+}
+
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.flex-list {
+  @extend .list-reset;
+  @extend .flex;
+}
+
+.flex-list-col {
+  @extend .flex-list;
+  @extend .flex-col;
 }
 
 .uc {
@@ -232,6 +275,18 @@ body {
   stroke-dasharray: 780;
   stroke-dashoffset: 780;
   animation: dash 4s linear alternate infinite;
+}
+
+.rotate {
+  -moz-transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+}
+
+.rotate.down {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
 }
 
 @keyframes dash {

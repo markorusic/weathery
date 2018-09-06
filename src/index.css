@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Basic");
 a {
   cursor: pointer; }
 
 body {
   padding: 0;
   margin: 0;
-  font-family: Helvetica; }
+  font-family: 'Basic', sans-serif; }
   body .wrapper {
     padding: 150px; }
   body .forecast {
@@ -55,8 +56,20 @@ body {
           font-size: 25px; }
     body .forecast .right {
       width: 550px; }
+      body .forecast .right .h1 {
+        align-items: center;
+        cursor: pointer; }
+        body .forecast .right .h1 i {
+          font-size: 20px;
+          margin-left: 10px;
+          color: #ffffffc2; }
       body .forecast .right .current-date {
         color: #ffffffc2; }
+      body .forecast .right .city-list li a {
+        cursor: pointer;
+        font-size: 23px; }
+        body .forecast .right .city-list li a:hover {
+          opacity: 0.7; }
       body .forecast .right .forecast-day-wrapper {
         align-items: flex-end; }
         body .forecast .right .forecast-day-wrapper .forecast-day-item {
@@ -67,7 +80,8 @@ body {
           -webkit-transition: all .3s ease-in-out;
           transition: all .3s ease-in-out; }
           body .forecast .right .forecast-day-wrapper .forecast-day-item .day-temperature {
-            justify-content: center; }
+            justify-content: center;
+            font-size: 21px; }
           body .forecast .right .forecast-day-wrapper .forecast-day-item .day-icon-wrapper {
             transition: all .3s ease-in-out; }
           body .forecast .right .forecast-day-wrapper .forecast-day-item:not(:last-child) {
@@ -76,9 +90,14 @@ body {
             background-color: #46c591de;
             height: 200px; }
             body .forecast .right .forecast-day-wrapper .forecast-day-item:hover .day-temperature {
-              transform: scale(1.5); }
+              font-size: 24px; }
             body .forecast .right .forecast-day-wrapper .forecast-day-item:hover .day-icon-wrapper svg {
               fill: #fff; }
+
+.list-reset, .flex-list, .flex-list-col, body .forecast .right .city-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none; }
 
 .uc, .h1 {
   text-transform: uppercase; }
@@ -96,10 +115,10 @@ body {
 .border-box, body .forecast .right .forecast-day-wrapper .forecast-day-item {
   box-sizing: border-box; }
 
-.flex, .flex-center, .flex-center-col, .flex-sp-between, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item {
+.flex, body .forecast .right .h1, .flex-list, .flex-list-col, body .forecast .right .city-list, .flex-center, .flex-center-col, .flex-sp-between, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item {
   display: flex; }
 
-.flex-col, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item, .flex-center-col {
+.flex-col, .flex-list-col, body .forecast .right .city-list, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item, .flex-center-col {
   flex-direction: column; }
 
 .flex-center, .flex-center-col {
@@ -148,6 +167,16 @@ body {
   stroke-dasharray: 780;
   stroke-dashoffset: 780;
   animation: dash 4s linear alternate infinite; }
+
+.rotate {
+  -moz-transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear; }
+
+.rotate.down {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg); }
 
 @keyframes dash {
   from {

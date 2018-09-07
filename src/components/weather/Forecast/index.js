@@ -10,6 +10,7 @@ const Forecast = ({ forecastData, cities, activeCity, lastUpdate, onChangeCity, 
       <WeatherBasicDetails
         temperature={forecastData.currently.temperature}
         summary={forecastData.currently.summary}
+        icon={forecastData.currently.icon}
         lastUpdate={lastUpdate}
         onReloadClick={onReload}
       />

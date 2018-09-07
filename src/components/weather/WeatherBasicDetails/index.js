@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { formatDateFromNow, formatFarenheit } from 'helpers/format'
-import Sun from 'assets/icons/web/sun'
+import WeatherIndicator from 'components/weather/shared/WeatherIndicator'
 import Chart from 'components/weather/Chart'
+import { formatDateFromNow, formatFarenheit } from 'helpers/format'
 
-const WeatherBasicDetails = ({ temperature, summary, lastUpdate, onReloadClick }) => (
+const WeatherBasicDetails = ({ temperature, summary, icon, lastUpdate, onReloadClick }) => (
   <div className="box top relative flex-sp-between-col">
     <div className="flex-sp-between top">
       <div>
@@ -17,7 +17,12 @@ const WeatherBasicDetails = ({ temperature, summary, lastUpdate, onReloadClick }
         </div>
       </div>
       <div>
-        <Sun width={60} height={60} fill="#fff" />
+        <WeatherIndicator
+          icon={icon}
+          width={60}
+          height={60}
+          fill="#fff"
+        />
       </div>
     </div>
     <div className="chart">
@@ -33,7 +38,7 @@ const WeatherBasicDetails = ({ temperature, summary, lastUpdate, onReloadClick }
           aria-hidden="true"
         ></i>
       </a>
-      <span className="ml-5">
+      <span className="ml-15">
         Updated <strong>{formatDateFromNow(lastUpdate)}</strong>
       </span>
     </div>
@@ -43,6 +48,7 @@ const WeatherBasicDetails = ({ temperature, summary, lastUpdate, onReloadClick }
 WeatherBasicDetails.propTypes = {
   temperature: PropTypes.number.isRequired,
   summary: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
   lastUpdate: PropTypes.number.isRequired,
   onReloadClick: PropTypes.func.isRequired
 }

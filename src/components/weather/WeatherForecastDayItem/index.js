@@ -1,11 +1,16 @@
 import React from 'react'
+import WeatherIndicator from 'components/weather/shared/WeatherIndicator'
 import { formatShortDay, formatFarenheit } from 'helpers/format'
-import Rain from 'assets/icons/web/rain'
 
 const WeatherForecastDayItem = ({ forecast }) => (
   <div className="forecast-day-item">
     <div className="day-icon-wrapper">
-      <Rain width={30} height={30} fill="#a3a8a9" />
+      <WeatherIndicator
+        icon={forecast.icon}
+        width={30}
+        height={30}
+        fill="#c0c0c0"
+      />
     </div>
     <div className="flex day-temperature">
       <span>{formatFarenheit(forecast.temperatureMax)}</span>

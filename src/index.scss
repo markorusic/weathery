@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Basic');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 @import './styles/variables.scss';
 
 a {
@@ -8,7 +8,7 @@ a {
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Basic', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 
   .wrapper {
     padding: 150px;
@@ -69,6 +69,11 @@ body {
         strong {
           font-size: 25px;
         }
+
+        .desc {
+          color: #ffffffc2;
+          font-size: 17px;
+        }
       }
 
     }
@@ -125,7 +130,7 @@ body {
 
             .day-temperature {
               justify-content: center;
-              font-size: 21px;
+              font-size: 22px;
             }
 
             .day-icon-wrapper {
@@ -142,7 +147,7 @@ body {
               height: 200px;
 
              .day-temperature {
-              font-size: 24px;
+              font-size: 25px;
              }
              .day-icon-wrapper {
                 svg {
@@ -194,6 +199,11 @@ body {
 
 .border-box {
   box-sizing: border-box;
+}
+
+.fa-circle {
+  margin-top: 2px;
+  margin-left: 1px;
 }
 
 .flex {

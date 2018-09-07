@@ -3,16 +3,26 @@ import PropTypes from 'prop-types'
 import { formatFarenheit } from 'helpers/format'
 
 const WeatherBasicDetails = ({ humidity, dewPoint, uvIndex, visibility }) => (
-  <div className="box bottom flex-sp-between-col">
-    <div className="flex-sp-between">
+  <div className="box bottom flex-sp-between">
+    <div className="flex-sp-between-col">
       <div>
         <div>
           <strong>{humidity}%</strong>
         </div>
         <div>
-          <span>Humidity</span>
+          <span className="desc">Humidity</span>
         </div>
       </div>
+      <div>
+        <div>
+          <strong>{uvIndex}/10</strong>
+        </div>
+        <div>
+          <span className="desc">UV Index</span>
+        </div>
+      </div>
+    </div>
+    <div className="flex-sp-between-col">
       <div>
         <div>
           <strong className="flex">
@@ -20,21 +30,17 @@ const WeatherBasicDetails = ({ humidity, dewPoint, uvIndex, visibility }) => (
             <i className="fa fa-circle fs-5" aria-hidden="true"></i>
           </strong>
         </div>
-        <div>Dew Pt.</div>
-      </div>
-    </div>
-    <div className="flex-sp-between">
-      <div>
         <div>
-          <strong>{uvIndex}/10</strong>
+          <span className="desc">Dew Pt.</span>
         </div>
-        <div>UV Index</div>
       </div>
       <div>
         <div>
-          <strong>{visibility}km</strong>
+          <strong>{visibility} km</strong>
         </div>
-        <div>Visibility</div>
+        <div>
+          <span className="desc">Visibility</span>
+        </div>
       </div>
     </div>
   </div>

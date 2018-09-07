@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Basic");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 a {
   cursor: pointer; }
 
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Basic', sans-serif; }
+  font-family: 'Fira Sans', sans-serif; }
   body .wrapper {
     padding: 150px; }
   body .forecast {
@@ -45,6 +45,9 @@ body {
         background: linear-gradient(90deg, #007e55 0%, #26af86 48%, #40a189 100%); }
         body .forecast .left .bottom strong {
           font-size: 25px; }
+        body .forecast .left .bottom .desc {
+          color: #ffffffc2;
+          font-size: 17px; }
     body .forecast .right {
       width: 550px; }
       body .forecast .right .h1 {
@@ -76,7 +79,7 @@ body {
           transition: all .3s ease-in-out; }
           body .forecast .right .forecast-day-wrapper .forecast-day-item .day-temperature {
             justify-content: center;
-            font-size: 21px; }
+            font-size: 22px; }
           body .forecast .right .forecast-day-wrapper .forecast-day-item .day-icon-wrapper {
             transition: all .3s ease-in-out; }
           body .forecast .right .forecast-day-wrapper .forecast-day-item:not(:last-child) {
@@ -86,7 +89,7 @@ body {
             background: linear-gradient(0deg, rgba(59, 108, 68, 0.770746) 0%, rgba(56, 208, 128, 0.795956) 48%, rgba(7, 231, 127, 0.804359) 100%);
             height: 200px; }
             body .forecast .right .forecast-day-wrapper .forecast-day-item:hover .day-temperature {
-              font-size: 24px; }
+              font-size: 25px; }
             body .forecast .right .forecast-day-wrapper .forecast-day-item:hover .day-icon-wrapper svg {
               fill: #fff; }
 
@@ -110,6 +113,10 @@ body {
 
 .border-box, body .forecast .right .forecast-day-wrapper .forecast-day-item {
   box-sizing: border-box; }
+
+.fa-circle {
+  margin-top: 2px;
+  margin-left: 1px; }
 
 .flex, body .forecast .right .h1, .flex-list, .flex-list-col, body .forecast .right .city-list, .flex-center, .flex-center-col, body .forecast, .flex-sp-between, .flex-sp-between-col, body .forecast .right .forecast-day-wrapper .forecast-day-item {
   display: flex; }

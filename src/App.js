@@ -77,7 +77,7 @@ class App extends Component {
     return (
       <div className="wrapper flex-center">
         <div className="forecast">
-          {!isLoading && (<div className="full-width">Logo weather</div>)}
+          {!isLoading && (<h3 className="full-width">Weathery</h3>)}
           <ForecastWithLoading
             isLoading={isLoading}
             forecastData={forecastData}

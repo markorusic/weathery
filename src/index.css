@@ -24,16 +24,8 @@ body {
         width: 250px;
         overflow: hidden;
         margin-bottom: 10px;
-        background: #00b7ea;
-        /* Old browsers */
-        background: -moz-linear-gradient(45deg, #00b7ea 0%, #33c0e8 70%, #009ec3 100%);
-        /* FF3.6-15 */
-        background: -webkit-linear-gradient(45deg, #00b7ea 0%, #33c0e8 70%, #009ec3 100%);
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(45deg, #00b7ea 0%, #33c0e8 70%, #009ec3 100%);
-        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=1 );
-        /* IE6-9 fallback on horizontal gradient */ }
+        background: #026673;
+        background: linear-gradient(90deg, #026673 0%, #0f8f99 48%, #408f99 100%); }
         body .forecast .left .top .h1 {
           font-size: 40px; }
         body .forecast .left .top .h2 {
@@ -49,12 +41,8 @@ body {
             fill: #89e5d6bd; }
       body .forecast .left .bottom {
         height: 120px;
-        background: #1f4037;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to bottom, #99f2c8, #1f4037);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to bottom, #99f2c8, #1f4037);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+        background: #007e55;
+        background: linear-gradient(90deg, #007e55 0%, #26af86 48%, #40a189 100%); }
         body .forecast .left .bottom strong {
           font-size: 25px; }
     body .forecast .right {
@@ -82,7 +70,8 @@ body {
           cursor: pointer;
           height: 180px;
           padding: 20px 24px;
-          background-color: #346b56d1;
+          background: #3b6c44;
+          background: linear-gradient(0deg, rgba(59, 108, 68, 0.639093) 0%, rgba(38, 175, 134, 0.611082) 48%, rgba(64, 161, 137, 0.70632) 100%);
           -webkit-transition: all .3s ease-in-out;
           transition: all .3s ease-in-out; }
           body .forecast .right .forecast-day-wrapper .forecast-day-item .day-temperature {
@@ -93,7 +82,8 @@ body {
           body .forecast .right .forecast-day-wrapper .forecast-day-item:not(:last-child) {
             border-right: 0.7px solid transparent; }
           body .forecast .right .forecast-day-wrapper .forecast-day-item:hover {
-            background-color: #46c591de;
+            background: #3b6c44;
+            background: linear-gradient(0deg, rgba(59, 108, 68, 0.770746) 0%, rgba(56, 208, 128, 0.795956) 48%, rgba(7, 231, 127, 0.804359) 100%);
             height: 200px; }
             body .forecast .right .forecast-day-wrapper .forecast-day-item:hover .day-temperature {
               font-size: 24px; }
@@ -151,6 +141,9 @@ body {
 
 .ml-5 {
   margin-left: 5px; }
+
+.ml-15 {
+  margin-left: 15px; }
 
 .fs-14 {
   font-size: 13px; }

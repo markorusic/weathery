@@ -1,7 +1,7 @@
 import React from "react"
 
-const Storn = props => (
-	<svg id="storm" viewBox="0 0 1000 1000" {...props}>
+const Storm = props => (
+	<svg id="storm" viewBox="270 330 430 300" {...props}>
 		<title>storn</title>
 		<path
 			className="st0"
@@ -16,4 +16,4 @@ const Storn = props => (
 	</svg>
 )
 
-export default Storn
+export default Storm

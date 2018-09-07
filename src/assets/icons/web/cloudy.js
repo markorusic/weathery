@@ -1,7 +1,7 @@
 import React from "react"
 
 const Coloudy = props => (
-	<svg id="cloudy" viewBox="0 0 1000 1000" {...props}>
+	<svg id="cloudy" viewBox="270 330 430 300" {...props}>
 		<title>cloudy</title>
 		<g id="sun_copy">
 			<path

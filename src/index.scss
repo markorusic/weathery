@@ -37,7 +37,7 @@ body {
         width: 250px;
         overflow: hidden;
         margin-bottom: 10px;
-
+        
         background: rgb(2,102,115);
         background: linear-gradient(90deg, rgba(2,102,115,1) 0%, rgba(15,143,153,1) 48%, rgba(64,143,153,1) 100%);
 
@@ -103,7 +103,7 @@ body {
       .city-list {
         @extend .flex-list-col;
         margin-bottom: 5px !important;
-        
+
         li a {
           cursor: pointer;
           font-size: 23px;

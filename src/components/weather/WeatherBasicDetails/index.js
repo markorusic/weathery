@@ -6,7 +6,7 @@ import { formatDateFromNow, formatFarenheit } from 'helpers/format'
 
 const WeatherBasicDetails = ({ temperature, summary, icon, lastUpdate, onReloadClick }) => (
   <div className="box top relative flex-sp-between-col">
-    <div className="flex-sp-between top">
+    <div className="flex-sp-between">
       <div>
         <div className="h1 flex">
           <span>{formatFarenheit(temperature)}</span>

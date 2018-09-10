@@ -7,17 +7,18 @@ export default {
     switch (citySlug) {
       case 'bg':
         data = bgData
-        break;
+        break
       case 'ns':
         data = nsData
-        break;
+        break
       default:
-        break;
+        break
     }
     return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(data)
-      }, 1000)
+      setTimeout(
+        () => resolve(data),
+        1000
+      )
     })
   }
 }

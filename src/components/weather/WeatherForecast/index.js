@@ -9,10 +9,8 @@ class WeatherForecast extends React.Component {
     showCitiesList: false
   }
 
-  setCitiesList = (flag) => {
-    this.setState(prevState => ({
-      showCitiesList: flag
-    }))
+  setCitiesList = (showCitiesList) => {
+    this.setState({ showCitiesList })
   }
 
   openCitiesList = () => this.setCitiesList(true)
@@ -34,12 +32,11 @@ class WeatherForecast extends React.Component {
         <div className="bg-overlay"></div>
         <div className="flex-sp-between-col absolute-cover">
           <div className="box" onMouseLeave={this.closeCitiesList}>
-            <h1
-              className="h1"
-              onMouseEnter={this.openCitiesList}
-            >
-              {city.name}
-              <i className="fa fa-chevron-down" />
+            <h1 className="h1">
+              <div className="flex-center" onMouseEnter={this.openCitiesList}>
+                <span>{city.name}</span>
+                <i className="fa fa-chevron-down" />
+              </div>
             </h1>
             {
               showCitiesList && (

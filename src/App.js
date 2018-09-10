@@ -12,7 +12,7 @@ const cities = [
     image: bg
   },
   {
-    name: 'Novi sad',
+    name: 'Novi Sad',
     slug: 'ns',
     image: ns
   }

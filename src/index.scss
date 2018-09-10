@@ -103,7 +103,7 @@ body {
       .city-list {
         @extend .flex-list-col;
         margin-bottom: 5px !important;
-
+        
         li a {
           cursor: pointer;
           font-size: 23px;
@@ -123,24 +123,22 @@ body {
             cursor: pointer;
             height: 180px;
             padding: 20px 24px;
+            overflow: hidden;
 
             background: rgb(59,108,68);
             background: linear-gradient(0deg, rgba(59,108,68,0.639093137254902) 0%, rgba(38,175,134,0.6110819327731092) 48%, rgba(64,161,137,0.7063200280112045) 100%);
+            border-right: 0.7px solid #d9ecf836;
 
             -webkit-transition: all $forecast-day-item-transition-duration ease-in-out;;
             transition: all $forecast-day-item-transition-duration ease-in-out;
 
             .day-temperature {
               justify-content: center;
-              font-size: 22px;
+              font-size: 21px;
             }
 
             .day-icon-wrapper {
               transition: all $forecast-day-item-transition-duration ease-in-out;
-            }
-
-            &:not(:last-child) {
-              border-right: 0.7px solid transparent;
             }
 
             &:hover {

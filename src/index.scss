@@ -13,7 +13,7 @@ body {
   font-family: 'Fira Sans', sans-serif;
 
   .wrapper {
-    padding: 150px;
+    padding: 50px 75px;
   }
 
   .forecast {
@@ -37,7 +37,7 @@ body {
         width: 250px;
         overflow: hidden;
         margin-bottom: 10px;
-        
+
         background: rgb(2,102,115);
         background: linear-gradient(90deg, rgba(2,102,115,1) 0%, rgba(15,143,153,1) 48%, rgba(64,143,153,1) 100%);
 
@@ -127,7 +127,7 @@ body {
 
             background: rgb(59,108,68);
             background: linear-gradient(0deg, rgba(59,108,68,0.639093137254902) 0%, rgba(38,175,134,0.6110819327731092) 48%, rgba(64,161,137,0.7063200280112045) 100%);
-            border-right: 0.7px solid #d9ecf836;
+            border-right: 0.8px solid #d9ecf836;
 
             -webkit-transition: all $forecast-day-item-transition-duration ease-in-out;;
             transition: all $forecast-day-item-transition-duration ease-in-out;

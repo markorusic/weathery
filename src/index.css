@@ -108,7 +108,7 @@ body {
   margin: 0;
   font-family: 'Fira Sans', sans-serif; }
   body .wrapper {
-    padding: 150px; }
+    padding: 50px 75px; }
   body .forecast {
     padding: 60px;
     background-color: #D9ECF8;
@@ -177,7 +177,7 @@ body {
           overflow: hidden;
           background: #3b6c44;
           background: linear-gradient(0deg, rgba(59, 108, 68, 0.639093) 0%, rgba(38, 175, 134, 0.611082) 48%, rgba(64, 161, 137, 0.70632) 100%);
-          border-right: 0.7px solid #d9ecf836;
+          border-right: 0.8px solid #d9ecf836;
           -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out; }
           body .forecast .right .forecast-day-wrapper .forecast-day-item .day-temperature {

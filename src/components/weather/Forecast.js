@@ -1,10 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import WeatherBasicDetails from 'components/weather/WeatherBasicDetails'
-import WeatherAdvancedDetails from 'components/weather/WeatherAdvancedDetails'
-import WeatherForecast from 'components/weather/WeatherForecast'
+import WeatherBasicDetails from './WeatherBasicDetails'
+import WeatherAdvancedDetails from './WeatherAdvancedDetails'
+import WeatherForecast from './WeatherForecast'
 
-const Forecast = ({ forecastData, cities, activeCity, lastUpdate, onChangeCity, onReload }) => (
+const Forecast = ({
+  forecastData,
+  cities,
+  activeCity,
+  lastUpdate,
+  onChangeCity,
+  onReload
+}) => (
   <div className="flex">
     <div className="left">
       <WeatherBasicDetails

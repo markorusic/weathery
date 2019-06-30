@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Cloud from 'assets/icons/web/cloud'
 import Cloudy from 'assets/icons/web/cloudy'
 import Moon from 'assets/icons/web/moon'
@@ -8,8 +7,7 @@ import Snowing from 'assets/icons/web/snowing'
 import Storm from 'assets/icons/web/storm'
 import Sun from 'assets/icons/web/sun'
 
-
-const WeatherIndicatorIcon = ({ icon, ...props }) => {
+export const WeatherIcon = ({ icon, ...props }) => {
   switch (icon) {
     case 'cloudy':
     case 'partly-cloudy-day':
@@ -27,12 +25,6 @@ const WeatherIndicatorIcon = ({ icon, ...props }) => {
     case 'clear-night':
       return <Moon {...props} />
     default:
-      return <Cloud {...props } />
+      return <Cloud {...props} />
   }
 }
-
-WeatherIndicatorIcon.propTypes = {
-  icon: PropTypes.string.isRequired
-}
-
-export default WeatherIndicatorIcon

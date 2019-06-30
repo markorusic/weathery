@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import WeatherIndicator from 'components/weather/shared/WeatherIndicator'
-import Chart from 'components/weather/Chart'
+import { WeatherIcon } from 'components/lib'
+import Chart from './Chart'
 import { formatDateFromNow, formatFarenheit } from 'utils'
 
 const WeatherBasicDetails = ({
@@ -23,7 +23,7 @@ const WeatherBasicDetails = ({
         </div>
       </div>
       <div>
-        <WeatherIndicator icon={icon} width={60} height={60} fill="#fff" />
+        <WeatherIcon icon={icon} width={60} height={60} fill="#fff" />
       </div>
     </div>
     <div className="chart">

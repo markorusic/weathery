@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import WeatherForecastDayItem from 'components/weather/WeatherForecastDayItem'
 import { formatDateBasic } from 'utils'
+import WeatherForecastDayItem from './WeatherForecastDayItem'
 
 class WeatherForecast extends React.Component {
   state = {

@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { WeatherIcon } from 'components/lib'
-import Chart from './Chart'
 import { formatDateFromNow, formatFarenheit } from 'utils'
+import { WeatherIcon, Chart } from 'components/lib'
 
 const WeatherBasicDetails = ({
   temperature,
@@ -30,15 +29,16 @@ const WeatherBasicDetails = ({
       <Chart />
     </div>
     <div className="absolute-b-20">
-      <a
+      <span
         className="rotate"
         onClick={event => {
+          event.preventDefault()
           onReloadClick()
           event.target.classList.toggle('down')
         }}
       >
         <i className="fa fa-repeat rotate" aria-hidden="true" />
-      </a>
+      </span>
       <span className="ml-15">
         Updated <strong>{formatDateFromNow(lastUpdate)}</strong>
       </span>

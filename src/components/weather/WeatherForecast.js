@@ -41,7 +41,7 @@ class WeatherForecast extends React.Component {
               <ul className="city-list">
                 {listCities.map(c => (
                   <li key={c.slug}>
-                    <a onClick={() => onChangeCity(c)}>{c.name}</a>
+                    <span onClick={() => onChangeCity(c)}>{c.name}</span>
                   </li>
                 ))}
               </ul>

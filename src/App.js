@@ -2,27 +2,13 @@ import React, { Component } from 'react'
 import withLoading from 'hoc/withLoading'
 import weatherService from 'services/weatherService'
 import Forecast from 'components/weather/Forecast'
-import bg from 'assets/images/bg.jpg'
-import ns from 'assets/images/ns.jpg'
-
-const cities = [
-  {
-    name: 'Belgrade',
-    slug: 'bg',
-    image: bg
-  },
-  {
-    name: 'Novi Sad',
-    slug: 'ns',
-    image: ns
-  }
-]
 
 const ForecastWithLoading = withLoading(Forecast)
 
 class App extends Component {
   state = {
-    activeCity: cities[0],
+    cities: [],
+    activeCity: null,
     forecastData: null,
     lastUpdate: null,
     isLoading: false,
@@ -41,22 +27,27 @@ class App extends Component {
     clearInterval(this.rerenderInterval)
   }
 
-  loadData = (showLoader = true) => {
+  loadData = async (showLoader = true) => {
     if (showLoader) {
       this.toggleLoader()
     }
-    return weatherService
-      .fetchDataByCity(this.state.activeCity.slug)
-      .then(data => {
-        this.setState({
-          forecastData: data,
-          lastUpdate: Date.now()
-        })
-        if (showLoader) {
-          this.toggleLoader()
-        }
-        return data
-      })
+
+    const cities = await weatherService.fetchCities()
+    const activeCity = this.state.activeCity ? this.state.activeCity : cities[0]
+    const forecastData = await weatherService.fetchDataByCity(activeCity.slug)
+
+    this.setState(state => ({
+      cities,
+      activeCity,
+      forecastData,
+      lastUpdate: Date.now()
+    }))
+
+    if (showLoader) {
+      this.toggleLoader()
+    }
+
+    return forecastData
   }
 
   toggleLoader = () => {
@@ -75,7 +66,13 @@ class App extends Component {
   }
 
   render() {
-    const { isLoading, lastUpdate, forecastData, activeCity } = this.state
+    const {
+      isLoading,
+      lastUpdate,
+      forecastData,
+      cities,
+      activeCity
+    } = this.state
 
     return (
       <div className="wrapper flex-center">

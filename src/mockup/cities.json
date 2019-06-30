@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Belgrade",
+    "slug": "bg",
+    "image": "assets/bg.jpg"
+  },
+  {
+    "name": "Novi Sad",
+    "slug": "ns",
+    "image": "assets/ns.jpg"
+  }
+]

@@ -30,7 +30,7 @@ const WeatherBasicDetails = ({
     </div>
     <div className="absolute-b-20">
       <span
-        className="rotate"
+        className="rotate pointer"
         onClick={event => {
           event.preventDefault()
           onReloadClick()

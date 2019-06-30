@@ -2,7 +2,8 @@
 @import './variables.scss';
 @import './helpers.scss';
 
-a {
+a,
+.pointer {
   cursor: pointer;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { formatFarenheit } from 'helpers/format'
+import { formatFarenheit } from 'utils'
 
 const WeatherBasicDetails = ({ humidity, dewPoint, uvIndex, visibility }) => (
   <div className="box bottom flex-sp-between">
@@ -27,7 +27,7 @@ const WeatherBasicDetails = ({ humidity, dewPoint, uvIndex, visibility }) => (
         <div>
           <strong className="flex">
             <span>{formatFarenheit(dewPoint)}</span>
-            <i className="fa fa-circle fs-5" aria-hidden="true"></i>
+            <i className="fa fa-circle fs-5" aria-hidden="true" />
           </strong>
         </div>
         <div>

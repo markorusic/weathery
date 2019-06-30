@@ -1,6 +1,6 @@
 import React from 'react'
 import WeatherIndicator from 'components/weather/shared/WeatherIndicator'
-import { formatShortDay, formatFarenheit } from 'helpers/format'
+import { formatShortDay, formatFarenheit } from 'utils'
 
 const WeatherForecastDayItem = ({ forecast }) => (
   <div className="forecast-day-item">
@@ -14,12 +14,10 @@ const WeatherForecastDayItem = ({ forecast }) => (
     </div>
     <div className="flex day-temperature">
       <span>{formatFarenheit(forecast.temperatureMax)}</span>
-      <i className="fa fa-circle fs-5" aria-hidden="true"></i>
+      <i className="fa fa-circle fs-5" aria-hidden="true" />
     </div>
     <div>
-      <span className="uc fs-14">
-        {formatShortDay(forecast.time * 1000)}
-      </span>
+      <span className="uc fs-14">{formatShortDay(forecast.time * 1000)}</span>
     </div>
   </div>
 )

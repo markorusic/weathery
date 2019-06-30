@@ -1,15 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import WeatherForecastDayItem from 'components/weather/WeatherForecastDayItem'
-import { formatDateBasic } from 'helpers/format'
+import { formatDateBasic } from 'utils'
 
 class WeatherForecast extends React.Component {
-
   state = {
     showCitiesList: false
   }
 
-  setCitiesList = (showCitiesList) => {
+  setCitiesList = showCitiesList => {
     this.setState({ showCitiesList })
   }
 
@@ -29,7 +28,7 @@ class WeatherForecast extends React.Component {
           backgroundImage: `url(${city.image})`
         }}
       >
-        <div className="bg-overlay"></div>
+        <div className="bg-overlay" />
         <div className="flex-sp-between-col absolute-cover">
           <div className="box" onMouseLeave={this.closeCitiesList}>
             <h1 className="h1">
@@ -38,32 +37,21 @@ class WeatherForecast extends React.Component {
                 <i className="fa fa-chevron-down" />
               </div>
             </h1>
-            {
-              showCitiesList && (
-                <ul className="city-list">
-                  {
-                    listCities.map(c => (
-                      <li key={c.slug}>
-                        <a onClick={() => onChangeCity(c)}>
-                          {c.name}
-                        </a>
-                      </li>
-                    ))
-                  }
-                </ul>
-              )
-            }
+            {showCitiesList && (
+              <ul className="city-list">
+                {listCities.map(c => (
+                  <li key={c.slug}>
+                    <a onClick={() => onChangeCity(c)}>{c.name}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
             <h2 className="current-date">{formatDateBasic(Date.now())}</h2>
           </div>
           <div className="flex-sp-between forecast-day-wrapper">
-            {
-              forecasts.map(forecast => (
-                <WeatherForecastDayItem
-                  key={forecast.time}
-                  forecast={forecast}
-                />
-              ))
-            }
+            {forecasts.map(forecast => (
+              <WeatherForecastDayItem key={forecast.time} forecast={forecast} />
+            ))}
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import withLoading from 'hoc/withLoading'
-import weatherService from 'services/weather'
+import weatherService from 'services/weatherService'
 import Forecast from 'components/weather/Forecast'
 import bg from 'assets/images/bg.jpg'
 import ns from 'assets/images/ns.jpg'
@@ -21,7 +21,6 @@ const cities = [
 const ForecastWithLoading = withLoading(Forecast)
 
 class App extends Component {
-
   state = {
     activeCity: cities[0],
     forecastData: null,
@@ -32,7 +31,10 @@ class App extends Component {
 
   componentWillMount() {
     this.loadData()
-    this.rerenderInterval = setInterval(() => this.setState({ lastCmpUpdate: Date.now() }), 60000)
+    this.rerenderInterval = setInterval(
+      () => this.setState({ lastCmpUpdate: Date.now() }),
+      60000
+    )
   }
 
   componentWillUnmount() {
@@ -43,7 +45,8 @@ class App extends Component {
     if (showLoader) {
       this.toggleLoader()
     }
-    return weatherService.fetchDataByCity(this.state.activeCity.slug)
+    return weatherService
+      .fetchDataByCity(this.state.activeCity.slug)
       .then(data => {
         this.setState({
           forecastData: data,
@@ -62,7 +65,7 @@ class App extends Component {
     }))
   }
 
-  onChangeCity = (city) => {
+  onChangeCity = city => {
     this.setState({ activeCity: city })
     this.loadData()
   }
@@ -77,7 +80,7 @@ class App extends Component {
     return (
       <div className="wrapper flex-center">
         <div className="forecast">
-          {!isLoading && (<h3 className="full-width">Weathery</h3>)}
+          {!isLoading && <h3 className="full-width">Weathery</h3>}
           <ForecastWithLoading
             isLoading={isLoading}
             forecastData={forecastData}
